@@ -24,18 +24,17 @@ class _InformationStoreView extends State<InformationStoreView> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children:[
               const Text('Información General\n',style: TextStyle(color: Colors.pinkAccent, fontSize: 15,)),
-              _buildButtonRow(Colors.black38, Icons.location_on, tienda2.adress),
-              _buildButtonRow(Colors.black38, Icons.call, tienda2.telephone),
-              _buildButtonRow(Colors.black38, Icons.ad_units, tienda2.cellphone),
+              _buildButtonRow(Colors.black38, Icons.location_on, tienda2.direccion),
+              _buildButtonRow(Colors.black38, Icons.call, tienda2.telefono),
+              _buildButtonRow(Colors.black38, Icons.ad_units, tienda2.celular),
               _buildButtonRow(Colors.black38, Icons.computer_outlined, tienda2.web),
-              _buildButtonRow(Colors.black38, Icons.facebook_outlined, tienda2.Facebook),
             ],
             crossAxisAlignment: CrossAxisAlignment.start,
            ),
           Column(
             children: [
               Image.asset(
-                'assets/imagenes/'+tienda2.Foto,
+                'assets/imagenes/'+tienda2.imgUrl+'.png',
                 width: 200,
                 height: 240,
                 fit: BoxFit.cover,
@@ -75,7 +74,7 @@ class _InformationStoreView extends State<InformationStoreView> {
                 Container(
                   padding: const EdgeInsets.only(bottom: 8),
                   child: Text(
-                    tienda2.name,
+                    tienda2.nombre,
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.pinkAccent,
@@ -83,7 +82,7 @@ class _InformationStoreView extends State<InformationStoreView> {
                   ),
                 ),
                 Text(
-                  tienda2.producto+' '+tienda2.type.toString(),
+                  tienda2.tipo.toString(),
                   style: const TextStyle(
                     color: Colors.grey,
                   ),
@@ -112,7 +111,7 @@ class _InformationStoreView extends State<InformationStoreView> {
             Icons.star,
             color: Colors.black45,
           ),
-          const Text('4'),
+          Text(tienda2.rate),
         ],
       ),
     );
@@ -125,7 +124,7 @@ class _InformationStoreView extends State<InformationStoreView> {
         body: ListView(
           children:[
             Image.asset(
-              'assets/imagenes/'+tienda2.logo,
+              'assets/imagenes/'+tienda2.imgIcon+'.png',
               width: 600,
               height: 240,
               fit: BoxFit.cover,
